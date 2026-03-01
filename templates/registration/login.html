@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+
+            <h3 class="mb-1 text-center">Login</h3>
+            <p class="text-muted text-center mb-4">Please log in to access your account.</p>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+                {% endif %}
+
+                <div class="mb-3">
+                <label class="form-label d-block">Username</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="text-danger small mt-1">{{ form.username.errors }}</div>
+                {% endif %}
+                </div>
+
+                <div class="mb-4">
+                <label class="form-label d-block">Password</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="text-danger small mt-1">{{ form.password.errors }}</div>
+                {% endif %}
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">
+                No account?
+                <a href="{% url 'tweeter:signup' %}">Sign up</a>
+                </small>
+            </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
