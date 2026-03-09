@@ -13,7 +13,6 @@ A lightweight Twitter-style microblogging web application built with Django. Use
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -45,38 +44,6 @@ A lightweight Twitter-style microblogging web application built with Django. Use
 | Config       | python-decouple                 |
 
 
-
-## Project Structure
-
-```
-Tweeter/
-|-- djangotweet/            # Django project configuration
-|   |-- settings.py         # Project settings (DB, middleware, etc.)
-|   |-- urls.py             # Root URL configuration
-|   |-- wsgi.py             # WSGI entry point
-|   +-- asgi.py             # ASGI entry point
-|
-|-- tweeter/                # Main application
-|   |-- models.py           # Tweet and Like models
-|   |-- views.py            # View functions and class-based views
-|   |-- urls.py             # App-level URL routing
-|   |-- forms.py            # Django forms (AddTweetForm, SignUpForm)
-|   |-- admin.py            # Admin site registration
-|   |-- templates/tweeter/  # App-specific templates
-|   +-- static/tweeter/     # CSS, images, logos
-|
-|-- templates/              # Project-level templates
-|   |-- base.html           # Base layout (navbar, Bootstrap CDN)
-|   +-- registration/       # Login and signup templates
-|
-|-- manage.py               # Django management script
-|-- requirements.txt        # Python dependencies
-|-- Procfile                # Gunicorn process declaration (Railway/Heroku)
-|-- runtime.txt             # Python runtime version
-+-- .gitignore              # Ignored files and directories
-```
-
----
 
 ## Getting Started
 
